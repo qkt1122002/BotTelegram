@@ -48,7 +48,7 @@ while True:
             mau = (0, 0, 255)
             img = cv2.putText(img, "PHAT HIEN XAM PHAM !!!", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
             if duration % 50 == 0:
-                os.chdir(r'\anh_xam_pham')
+                os.chdir(r'anh_xam_pham')
                 cv2.imwrite('xam_pham.png', img)
                 thread1 = Thread(target=guiAnhSangTelegram, args=(chat_id, open(r'xam_pham.png', 'rb'), "CẢNH BÁO: CÓ XÂM PHẠM !!!"))
                 thread1.start()
@@ -57,7 +57,7 @@ while True:
             img = cv2.putText(img, "Binh thuong", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
             mau = (0, 255, 0)
             if dem == 1:
-                os.chdir(r'\anh_xam_pham')
+                os.chdir(r'anh_xam_pham')
                 cv2.imwrite('khong_xam_pham.png', img)
                 
                 thread1 = Thread(target=guiAnhSangTelegram, args=(chat_id, open(r'khong_xam_pham.png', 'rb'), "KHÔNG CÓ XÂM PHẠM"))
